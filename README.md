@@ -1,4 +1,4 @@
-## Dies ist nur eine Übersetztung des Originals von I-Rinka
+## Dies ist nur eine Übersetztung des Originals von [I-Rinka](https://github.com/I-Rinka)
 
 Ich bin nicht für die funktion zuständig nur für die übersetzung aller Komentare ins Deutsche.
 
