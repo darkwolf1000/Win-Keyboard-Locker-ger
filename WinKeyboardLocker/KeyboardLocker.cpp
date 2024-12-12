@@ -5,9 +5,9 @@
 #include "Resource.h"
 #include "Name.h"
 #include"wintoastlib.h"
-//·½±ãÍ³Ò»µ÷ÓÃÃû³Æ,Ç°×ºÎªWKBDL_
+//Zur Vereinheitlichung des Rufnamens ist das PrÃ¤fix WKBDL_
 
-//¶¨ÒåWinProc´¦ÀíµÄÐÅÏ¢£¬¶ÔÍÐÅÌÍ¼±ê²Ù×÷ºó»á·¢ËÍWM_TRAYICONµÄmessage
+//Definiere WinProc Die verarbeiteten Informationen, die nach dem Vorgang an das Tray-Icon gesendet werden WM_TRAYICON benachrichtugung
 #define WM_TRAYICON WM_USER+1
 
 enum
@@ -17,32 +17,32 @@ enum
 	MENU_ACTION_EXIT
 };
 
-//Ê¹ÓÃÈ«¾Ö¾ä±ú
+//Globale Handles verwenden
 HINSTANCE hInst;
-HHOOK KBHook;//¹³×Ó¾ä±ú
+HHOOK KBHook;//Hook-Handle
 
-//Í¨¹ýÈ«¾Ö±äÁ¿isLockedÀ´ÅÐ¶Ïµ±Ç°¼üÅÌÉÏËø×´Ì¬
+//Mit Hilfe der globalen Variablen isLocked um den aktuellen Sperrstatus des Tastenfeldes zu ermitteln
 bool isLocked = false;
-//ÅÐ¶Ïµ±Ç°²Ù×÷ÏµÍ³ÊÇ·ñÖ§³ÖToast
+//Stellen Sie fest, ob das aktuelle Betriebssystem Folgendes unterstÃ¼tzt Toast
 bool SystemIsCopatiple = false;
 
-//ÍÐÅÌÍ¼±ê
+//Trayicon
 NOTIFYICONDATA TrayIcon = {};
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 LRESULT CALLBACK KbdHkProc(int, WPARAM, LPARAM);
 
-void CreatTrayMenu(HWND);//ÏÔÊ¾²Ëµ¥
-void KeyboardLocker();//ºËÐÄ³ÌÐò£¬¶Ô¹³×Ó¾ä±ú²Ù×÷£¬½øÐÐ¼üÅÌµÄËø¶¨/½âËø
+void CreatTrayMenu(HWND);//MenÃ¼ anzeigen
+void KeyboardLocker();//Kernprogramm, das auf Hookhandle zum Sperren/Entsperren der Tastatur wirkt
 void ShowMessage_Lock();
 void ShowMessage_Unlock();
 
-void APP_EXIT(HWND);//ÍË³ö³ÌÐò
+void APP_EXIT(HWND);//Opt-out-Verfahren
 void APP_ERROR(int);
 
 using namespace WinToastLib;
 
-//ÔÚ´ËÊµÏÖ¶ÔToastÑ¡¿òµÄ²Ù×÷
+//Dies ist der Punkt, an dem die Verwirklichung des Toast zur Manipulation von KontrollkÃ¤stchen
 class WinToastHandler : public IWinToastHandler {
 public:
 	void toastActivated() const {
@@ -51,7 +51,7 @@ public:
 
 	void toastActivated(int actionIndex) const {
 		//click button
-		//ÎªÁË·ÀÖ¹¼üÅÌÔÚ½âËøÊ±ÓÃ»§µã»÷¡°½âËø¡±³öÏÖ¼üÅÌËø¶¨µÄÇé¿ö£¬Òò´Ë±ØÐëÊ¹µÃÒÔ¡°Ëø¶¨×´Ì¬¡±½øÈë
+		//Um zu verhindern, dass die Tastatur gesperrt wird, wenn der Benutzer auf â€žEntsperrenâ€œ klickt, wÃ¤hrend die Tastatur entsperrt ist, muss es mÃ¶glich sein, den Zustand â€žGesperrtâ€œ zu erreichen.
 		isLocked = true;
 		KeyboardLocker();
 	}
@@ -70,7 +70,7 @@ WinToastTemplate Toast32;
 
 
 int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow) {
-	//windows´°¿ÚÄ¬ÈÏÉèÖÃ
+	//windows Standardeinstellungen fÃ¼r Fenster
 	WNDCLASS wcex;
 	wcex.lpfnWndProc = WndProc;
 	wcex.hInstance = hInstance;
@@ -90,14 +90,14 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 
 	hInst = hInstance;
 
-	//´´½¨Ò»¸ö¿´²»¼ûµÄ´°¿Ú
+	//Erstellen eines unsichtbaren Fensters
 	HWND hwnd = CreateWindow(WKBL_APP_NAME, WKBL_APP_TITLE, WS_OVERLAPPEDWINDOW, 0, 0, 0, 0, 0, 0, hInstance, NULL);
 	if (!hwnd)
 	{
 		APP_ERROR(2);
 	}
 
-	//¶¨ÒåÍÐÅÌÍ¼±ê
+	//Tablett-Symbole definieren
 	TrayIcon.cbSize = sizeof(NOTIFYICONDATA);
 	TrayIcon.hWnd = hwnd;
 	TrayIcon.hIcon = LoadIcon(hInst, MAKEINTRESOURCE(IDI_KEYBOARDLOCKER));
@@ -108,7 +108,7 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 	StringCchCopy(TrayIcon.szInfo, ARRAYSIZE(TrayIcon.szInfo), WKBL_NOTIFY_START);
 	Shell_NotifyIcon(NIM_ADD, &TrayIcon);
 
-	//³õÊ¼»¯Toast
+	//Initialisierungs Toast
 	if (WinToast::isCompatible())
 	{
 		SystemIsCopatiple = true;
@@ -151,10 +151,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_TRAYICON:
 		if (lParam == WM_RBUTTONUP)
 		{
-			SetForegroundWindow(hwnd);//Ê¹µÃ²Ëµ¥³öÏÖºó£¬µ¥»÷²Ëµ¥ÍâµÄÊ¹µØ·½Ñ¡¿òÏûÊ§
+			SetForegroundWindow(hwnd);//Nachdem Sie das MenÃ¼ eingeblendet haben, klicken Sie auÃŸerhalb des MenÃ¼s, damit das KontrollkÃ¤stchen verschwindet.
 			CreatTrayMenu(hwnd);
 		}
-		//Ë«»÷Í¼±êÊ±Ëø¶¨/½âËø¼üÅÌ
+		//Sperren/Entsperren der Tastatur bei Doppelklick auf das Symbol
 		else if (lParam == WM_LBUTTONDBLCLK)
 		{
 			KeyboardLocker();
@@ -174,7 +174,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 LRESULT CALLBACK KbdHkProc(int code, WPARAM wParam, LPARAM lParam)
 {
-	//ºöÂÔ¼üÅÌµÄ¶¯×÷,ÒÔºó»òÐí¿ÉÒÔÔÚÕâÀïÀ´À©³äºöÂÔµÄÊäÈëÀàÐÍ
+	//Ignorieren Sie Tastaturaktionen und erweitern Sie vielleicht in Zukunft die Arten von Eingaben, die hier ignoriert werden.
 	if (code == HC_ACTION)
 	{
 		return 1;
@@ -182,15 +182,15 @@ LRESULT CALLBACK KbdHkProc(int code, WPARAM wParam, LPARAM lParam)
 	return CallNextHookEx(NULL, code, wParam, lParam);
 }
 
-//´´½¨²Ëµ¥
+//MenÃ¼s erstellen
 void CreatTrayMenu(HWND hwnd)
 {
 	HMENU hMenu = CreatePopupMenu();
 
-	//¹æ¶¨²Ëµ¥Ñ¡Ïî
+	//MenÃ¼optionen definieren
 	if (isLocked)
 	{
-		AppendMenu(hMenu, MF_STRING, MENU_ACTION_LOCK, WKBL_MENU_UNLOCK);//ÒòÎª´ËÊ±¼üÅÌËø¶¨ÁË£¬ËùÒÔÒªÏÔÊ¾¡°½âËø¡±
+		AppendMenu(hMenu, MF_STRING, MENU_ACTION_LOCK, WKBL_MENU_UNLOCK);//Da die Tastatur gesperrt ist, sollte dort â€žentsperrtâ€œ stehen.
 	}
 	else
 	{
@@ -199,13 +199,13 @@ void CreatTrayMenu(HWND hwnd)
 	AppendMenu(hMenu, MF_SEPARATOR, 0, NULL);
 	AppendMenu(hMenu, MF_STRING, MENU_ACTION_EXIT, WKBL_MENU_EXIT);
 
-	//Êó±êµã»÷²Ëµ¥´«³öÏûÏ¢
+	//Mausklick auf das MenÃ¼, um eine Nachricht zu senden
 	POINT pt;
 	GetCursorPos(&pt);
 	TrackPopupMenu(hMenu, TPM_RIGHTALIGN, pt.x, pt.y, 0, hwnd, NULL);
 }
 
-//ÍË³ö³ÌÐò
+//Opt-out-Verfahren
 void APP_EXIT(HWND hwnd)
 {
 	Shell_NotifyIcon(NIM_DELETE, &TrayIcon);
@@ -229,7 +229,7 @@ WinToastTemplate InitializeWinToastTemlate()
 	return temp;
 }
 
-//ÏÔÊ¾ÏûÏ¢
+//æ˜¾ç¤ºæ¶ˆæ¯
 void ShowMessage_Unlock()
 {
 	StringCchCopy(TrayIcon.szInfo, ARRAYSIZE(TrayIcon.szInfo), WKBL_NOTIFY_UNLOCK);
@@ -241,18 +241,18 @@ void ShowMessage_Lock()
 	Shell_NotifyIcon(NIM_MODIFY, &TrayIcon);
 }
 
-//ºËÐÄ³ÌÐò£¬¿ØÖÆ½âËøÓë·ñ
+//æ ¸å¿ƒç¨‹åºï¼ŒæŽ§åˆ¶è§£é”ä¸Žå¦
 void KeyboardLocker()
 {
 	if (isLocked)
 	{
-		UnhookWindowsHookEx(KBHook);//½âËø
+		UnhookWindowsHookEx(KBHook);//è§£é”
 		ShowMessage_Unlock();
 		isLocked = false;
 	}
 	else
 	{
-		KBHook = SetWindowsHookEx(13, (HOOKPROC)KbdHkProc, (HINSTANCE)GetModuleHandle(NULL), 0);//Ëø¶¨¼üÅÌ
+		KBHook = SetWindowsHookEx(13, (HOOKPROC)KbdHkProc, (HINSTANCE)GetModuleHandle(NULL), 0);//é”å®šé”®ç›˜
 		if (SystemIsCopatiple)
 		{
 			WinToast::instance()->showToast(Toast32, new WinToastHandler());
