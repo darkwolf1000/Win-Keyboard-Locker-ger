@@ -1,49 +1,55 @@
+## Dies ist nur eine Übersetztung des Originals von I-Rinka
+
+Ich bin nicht für die funktion zuständig nur für die übersetzung aller Komentare ins Deutsche.
+
+Übersetzung des Originals:
 ## Win Keyboard Locker
 
-在上网课🎓时,你是否遇到了这样的问题？
-在观看一些学习资料，或者完成老师在课后布置的作业时，你会情不自禁的把书📖或者笔记本📔放到笔记本电脑💻的键盘上，结果出现了各种各样的误触情况😰。
-那么，你不妨试着使用一下这个APP。
-Win Keyboard Locker，你也可以叫他 Win 键盘锁🔐。 这是一个轻量化的开源小程序。有了它，我们就可以愉快的使用电脑学习而再也不用担心误触了🎉。
-程序运行后，你的键盘会被锁住，不过✅鼠标或者是✅触控板依然能正常使用。这样，你就可以方便的继续进行一些必要的浏览操作了。
+Sind Sie im Online-Unterricht🎓 schon einmal auf ein solches Problem gestoßen?
+Wenn Sie sich Lernmaterial ansehen oder nach dem Unterricht die vom Lehrer zugewiesenen Hausaufgaben erledigen, können Sie nicht anders, als das Buch 📖 oder das Notizbuch 📔 auf die Tastatur des Laptops 💻 zu legen, was zu allen möglichen Berührungsproblemen führt 😰.
+Versuchen Sie es doch mal mit dieser App.
+Win Keyboard Locker, man kann ihn auch Win Keyboard Locker nennen 🔐. Es ist ein leichtgewichtiges Open-Source-Applet. Damit kann man den Computer zum Lernen benutzen, ohne sich Sorgen über versehentliche Berührungen zu machen 🎉.
+Wenn das Programm läuft, wird die Tastatur gesperrt, aber die ✅Maus oder das ✅Touchpad funktionieren weiterhin. Auf diese Weise können Sie problemlos mit einigen notwendigen Browsing-Vorgängen fortfahren.
 
+Übersetzt mit DeepL.com (kostenlose Version)
 ## Install
 
-软件操作十分简单，相信在软件打开的一瞬间你就懂得该如何使用了。
+Die Software ist sehr einfach zu bedienen, und ich bin sicher, dass Sie sofort wissen, wie sie zu benutzen ist, sobald sie geöffnet wird.
 
 ## Feature
 
-你可以使用以下方式解锁、锁定键盘：
+Sie können die Tastatur wie folgt entsperren und sperren:
 
-+ **左键双击**托盘上的图标
-+ 右键托盘上图标后根据菜单锁定/解锁
-+ 使用通知中心的通知按钮**解锁**键盘
+**Doppelklick mit der linken Maustaste** auf das Symbol in der Taskleiste
++ Klicken Sie mit der rechten Maustaste auf das Symbol in der Taskleiste und folgen Sie dem Menü, um es zu sperren/entsperren
++ Entsperren** Sie die Tastatur über die Benachrichtigungsschaltfläche** in der Benachrichtigungszentrale
 
 ## Uninstall
 
-由于使用WinRT api的限制，程序运行后必须要注册一个AppUserModelId；如果要使用通知的话，则必须要使得win32在开始菜单上有快捷方式，因此本程序设置为在运行后自动在开始菜单创建快捷方式。
+Aufgrund der Einschränkung der Verwendung von WinRT api, muss das Programm eine AppUserModelId nach der Ausführung zu registrieren; wenn Sie die Benachrichtigung verwenden möchten, müssen Sie win32 haben eine Verknüpfung im Startmenü, so dass dieses Programm ist so eingestellt, eine Verknüpfung im Startmenü automatisch nach der Ausführung zu erstellen.
 
-因为本程序并非安装程序，所以如果需要卸载本程序，和删除本程序在开始菜单上的快捷方式，右键图标后点击**卸载**是没有用的。正确操作：右键图标👉更多👉打开文件所在位置👉删除
+Da es sich bei diesem Programm nicht um ein Installationsprogramm handelt, hilft es nicht, wenn Sie das Programm deinstallieren und die Verknüpfung im Startmenü entfernen möchten, indem Sie mit der rechten Maustaste auf das Symbol klicken und auf **Deinstallieren** klicken. Richtige Aktion: Rechtsklick auf das Symbol 👉Mehr👉Dateispeicherort öffnen👉Löschen
 
 
 
 ## Misc 
-## 后序更新计划
+## Rückständiger Aktualisierungsplan
 
-原作者由于学业问题，并不会定期更新软件，不过目前版本上仍有一些亟待解决的问题
+Der ursprüngliche Autor aktualisiert die Software aufgrund seines Studiums nicht regelmäßig, aber es gibt immer noch ein paar Probleme, die in der aktuellen Version behoben werden müssen
 
-### 需要优化之处：
+### Optimierungsbedarf:
 
-+ 限制此程序只能启动一次，不能使用户同一时间多次运行
-+ 通知部分目前还有不足，之前打算完全使用Toast，结果发现反而徒增混乱，甚至效果还不如目前Toast和NOTIFYICON混用着的自然。
-  + 做出让程序最多同时存在一个通知的效果
-+ 允许一部分快捷键在锁定键盘后仍然可以使用，比如Win+A呼出通知中心，四指按压触控板打开通知中心等。
++ Die Anwendung darf nur einmal gestartet werden, damit die Benutzer sie nicht mehr als einmal gleichzeitig ausführen können.
++ Ich hatte vor, ausschließlich Toast zu verwenden, aber es stellte sich heraus, dass es verwirrend und nicht so natürlich ist wie die aktuelle Mischung aus Toast und NOTIFYICON.
+  + Sorgen Sie dafür, dass die Anwendung maximal eine Benachrichtigung zur gleichen Zeit anzeigt.
++ Einige Tastenkombinationen können auch bei gesperrter Tastatur verwendet werden, z.B. Win+A, um die Benachrichtigungszentrale aufzurufen, Vier-Finger-Druck auf dem Trackpad, um die Benachrichtigungszentrale zu öffnen.
 
-### 需要增加的功能：
+### Hinzufügende Funktionen:
 
-+ 锁定用户自定义按键的功能
-+ 允许用户在“启用Toast通知和传统Win32通知”间转换
++ Benutzerdefinierte Tasten sperren.
++ Umschalten zwischen „Toast-Benachrichtigungen und herkömmlichen Win32-Benachrichtigungen“ ermöglichen.
 + ....
-+ 是否需要增加功能仍待商讨，因为程序原本的目的就是打造一个极其轻量化的小程序（使用C++编写的原因），运行较少功能并不应该使得程序过于臃肿
++ Die Notwendigkeit zusätzlicher Funktionen ist fraglich, da der ursprüngliche Zweck der Anwendung darin besteht, ein extrem leichtgewichtiges (in C++ geschriebenes) Applet zu sein, und die Ausführung weniger Funktionen sollte die Anwendung nicht zu sehr aufblähen.
 
-## Watch Out
-**因为作者并没有为这个win32程序设置*数字签名*，所以在releases用Microsoft Edge下载应用时，或者在windows中运行时，很有可能出现smart screen的拦截提示。但是由于这是一个源码公开的程序，所以不可能有任何危害性功能，请放心使用。**
+## Achtung
+**Da der Autor diese Win32-Anwendung nicht *digital signiert* hat, besteht eine gute Chance, dass die Anwendung, wenn sie mit Microsoft Edge heruntergeladen oder unter Windows ausgeführt wird, mit einem Smart Screen blockiert wird. Da es sich jedoch um ein Open-Source-Programm handelt, ist es unwahrscheinlich, dass es schädliche Funktionen hat, also können Sie es gerne verwenden. **
