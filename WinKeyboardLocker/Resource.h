@@ -1,6 +1,6 @@
 ﻿//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ 生成的包含文件。
-// 使用者 KeyboardLocker.rc
+// Microsoft Visual C++ Erstellte Include-Dateien.
+// Benutzer KeyboardLocker.rc
 
 #define IDS_APP_TITLE			103
 
@@ -17,7 +17,7 @@
 #define IDC_STATIC				-1
 #define IDI_ICON1	108
 #endif
-// 新对象的下一组默认值
+// Der nächste Satz von Standardwerten für das neue Objekt
 //
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
