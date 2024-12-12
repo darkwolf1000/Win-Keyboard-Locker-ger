@@ -229,7 +229,7 @@ WinToastTemplate InitializeWinToastTemlate()
 	return temp;
 }
 
-//显示消息
+//Nachricht anzeigen
 void ShowMessage_Unlock()
 {
 	StringCchCopy(TrayIcon.szInfo, ARRAYSIZE(TrayIcon.szInfo), WKBL_NOTIFY_UNLOCK);
@@ -241,18 +241,18 @@ void ShowMessage_Lock()
 	Shell_NotifyIcon(NIM_MODIFY, &TrayIcon);
 }
 
-//核心程序，控制解锁与否
+//Das Kernprogramm, das steuert, ob es freigeschaltet wird oder nicht
 void KeyboardLocker()
 {
 	if (isLocked)
 	{
-		UnhookWindowsHookEx(KBHook);//解锁
+		UnhookWindowsHookEx(KBHook);//freigeben
 		ShowMessage_Unlock();
 		isLocked = false;
 	}
 	else
 	{
-		KBHook = SetWindowsHookEx(13, (HOOKPROC)KbdHkProc, (HINSTANCE)GetModuleHandle(NULL), 0);//锁定键盘
+		KBHook = SetWindowsHookEx(13, (HOOKPROC)KbdHkProc, (HINSTANCE)GetModuleHandle(NULL), 0);//Sperren der Tastatur
 		if (SystemIsCopatiple)
 		{
 			WinToast::instance()->showToast(Toast32, new WinToastHandler());
