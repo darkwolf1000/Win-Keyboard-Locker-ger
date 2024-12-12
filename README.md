@@ -22,7 +22,7 @@ Sie können die Tastatur wie folgt entsperren und sperren:
 
 **Doppelklick mit der linken Maustaste** auf das Symbol in der Taskleiste
 + Klicken Sie mit der rechten Maustaste auf das Symbol in der Taskleiste und folgen Sie dem Menü, um es zu sperren/entsperren
-+ Entsperren** Sie die Tastatur über die Benachrichtigungsschaltfläche** in der Benachrichtigungszentrale
++ Entsperren **Sie die Tastatur über die Benachrichtigungsschaltfläche** in der Benachrichtigungszentrale
 
 ## Uninstall
 
@@ -41,7 +41,7 @@ Der ursprüngliche Autor aktualisiert die Software aufgrund seines Studiums nich
 
 + Die Anwendung darf nur einmal gestartet werden, damit die Benutzer sie nicht mehr als einmal gleichzeitig ausführen können.
 + Ich hatte vor, ausschließlich Toast zu verwenden, aber es stellte sich heraus, dass es verwirrend und nicht so natürlich ist wie die aktuelle Mischung aus Toast und NOTIFYICON.
-  + Sorgen Sie dafür, dass die Anwendung maximal eine Benachrichtigung zur gleichen Zeit anzeigt.
++ Sorgen Sie dafür, dass die Anwendung maximal eine Benachrichtigung zur gleichen Zeit anzeigt.
 + Einige Tastenkombinationen können auch bei gesperrter Tastatur verwendet werden, z.B. Win+A, um die Benachrichtigungszentrale aufzurufen, Vier-Finger-Druck auf dem Trackpad, um die Benachrichtigungszentrale zu öffnen.
 
 ### Hinzufügende Funktionen:
@@ -52,4 +52,14 @@ Der ursprüngliche Autor aktualisiert die Software aufgrund seines Studiums nich
 + Die Notwendigkeit zusätzlicher Funktionen ist fraglich, da der ursprüngliche Zweck der Anwendung darin besteht, ein extrem leichtgewichtiges (in C++ geschriebenes) Applet zu sein, und die Ausführung weniger Funktionen sollte die Anwendung nicht zu sehr aufblähen.
 
 ## Achtung
-**Da der Autor diese Win32-Anwendung nicht *digital signiert* hat, besteht eine gute Chance, dass die Anwendung, wenn sie mit Microsoft Edge heruntergeladen oder unter Windows ausgeführt wird, mit einem Smart Screen blockiert wird. Da es sich jedoch um ein Open-Source-Programm handelt, ist es unwahrscheinlich, dass es schädliche Funktionen hat, also können Sie es gerne verwenden. **
+**Da der Autor diese Win32-Anwendung nicht *digital signiert* hat, besteht eine gute Chance, dass die Anwendung, wenn sie mit Microsoft Edge heruntergeladen oder unter Windows ausgeführt wird, mit einem Smart Screen blockiert wird. Da es sich jedoch um ein Open-Source-Programm handelt, ist es unwahrscheinlich, dass es schädliche Funktionen hat, also können Sie es gerne verwenden.**
+
+Übersetztung ende
+
+## Bauen vom Quellcode
+
++ Insatlliere Visual Studio (Hier würde 2022 verwendet bzw. 17)
++ Öffne die Datei 'KeyboardLocker.sln'
++ Installiere alle benötigten bahängigkeiten
++ (Optional) mache deine Anpassungen
++ Starte den Build-Prozess
