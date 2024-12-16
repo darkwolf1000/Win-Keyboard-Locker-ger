@@ -44,12 +44,12 @@ Der ursprüngliche Autor aktualisiert die Software aufgrund seines Studiums nich
 + Sorgen Sie dafür, dass die Anwendung maximal eine Benachrichtigung zur gleichen Zeit anzeigt.
 + Einige Tastenkombinationen können auch bei gesperrter Tastatur verwendet werden, z.B. Win+A, um die Benachrichtigungszentrale aufzurufen, Vier-Finger-Druck auf dem Trackpad, um die Benachrichtigungszentrale zu öffnen.
 
-### Hinzufügende Funktionen:
+~~### Hinzufügende Funktionen:~~
 
-+ Benutzerdefinierte Tasten sperren.
-+ Umschalten zwischen „Toast-Benachrichtigungen und herkömmlichen Win32-Benachrichtigungen“ ermöglichen.
-+ ....
-+ Die Notwendigkeit zusätzlicher Funktionen ist fraglich, da der ursprüngliche Zweck der Anwendung darin besteht, ein extrem leichtgewichtiges (in C++ geschriebenes) Applet zu sein, und die Ausführung weniger Funktionen sollte die Anwendung nicht zu sehr aufblähen.
+~~+ Benutzerdefinierte Tasten sperren.~~
+~~+ Umschalten zwischen „Toast-Benachrichtigungen und herkömmlichen Win32-Benachrichtigungen“ ermöglichen.~~
+~~+ ....~~
+~~+ Die Notwendigkeit zusätzlicher Funktionen ist fraglich, da der ursprüngliche Zweck der Anwendung darin besteht, ein extrem leichtgewichtiges (in C++ geschriebenes) Applet zu sein, und die Ausführung weniger Funktionen sollte die Anwendung nicht zu sehr aufblähen.~~
 
 ## Achtung
 **Da der Autor diese Win32-Anwendung nicht *digital signiert* hat, besteht eine gute Chance, dass die Anwendung, wenn sie mit Microsoft Edge heruntergeladen oder unter Windows ausgeführt wird, mit einem Smart Screen blockiert wird. Da es sich jedoch um ein Open-Source-Programm handelt, ist es unwahrscheinlich, dass es schädliche Funktionen hat, also können Sie es gerne verwenden.**
