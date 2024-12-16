@@ -44,7 +44,7 @@ Der ursprüngliche Autor aktualisiert die Software aufgrund seines Studiums nich
 + Sorgen Sie dafür, dass die Anwendung maximal eine Benachrichtigung zur gleichen Zeit anzeigt.
 + Einige Tastenkombinationen können auch bei gesperrter Tastatur verwendet werden, z.B. Win+A, um die Benachrichtigungszentrale aufzurufen, Vier-Finger-Druck auf dem Trackpad, um die Benachrichtigungszentrale zu öffnen.
 
-~~### Hinzufügende Funktionen:~~
+### ~~Hinzufügende Funktionen:~~
 
 ~~+ Benutzerdefinierte Tasten sperren.~~
 ~~+ Umschalten zwischen „Toast-Benachrichtigungen und herkömmlichen Win32-Benachrichtigungen“ ermöglichen.~~
