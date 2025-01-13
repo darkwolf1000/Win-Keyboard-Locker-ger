@@ -59,7 +59,7 @@ Der ursprüngliche Autor aktualisiert die Software aufgrund seines Studiums nich
 
 ## Bauen vom Quellcode
 
-+ Installiere Visual Studio (Hier würde 2022 verwendet bzw. 17)
++ Installiere Visual Studio (Hier wurde 2022 verwendet bzw. 17)
 + Öffne die Datei 'KeyboardLocker.sln'
 + Installiere alle benötigten Bauabhängigkeiten
 + (Optional) mache deine Anpassungen
