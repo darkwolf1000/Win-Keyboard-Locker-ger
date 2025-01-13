@@ -1,8 +1,6 @@
-## Dies ist nur eine Übersetztung des Originals von [I-Rinka](https://github.com/I-Rinka)
-
-Ich bin nicht für die funktion zuständig nur für die übersetzung aller Komentare ins Deutsche.
-
+Ich bin nicht für die Funktion zuständig nur für die Übersetzung aller Kommentare ins Deutsche
 Übersetzung des Originals:
+
 ## Win Keyboard Locker
 
 Sind Sie im Online-Unterricht🎓 schon einmal auf ein solches Problem gestoßen?
@@ -58,8 +56,8 @@ Der ursprüngliche Autor aktualisiert die Software aufgrund seines Studiums nich
 
 ## Bauen vom Quellcode
 
-+ Insatlliere Visual Studio (Hier würde 2022 verwendet bzw. 17)
++ Installiere Visual Studio (Hier würde 2022 verwendet bzw. 17)
 + Öffne die Datei 'KeyboardLocker.sln'
-+ Installiere alle benötigten bahängigkeiten
++ Installiere alle benötigten Bauabhängigkeiten
 + (Optional) mache deine Anpassungen
 + Starte den Build-Prozess
