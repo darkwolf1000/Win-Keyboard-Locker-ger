@@ -1,6 +1,7 @@
 ## Dies ist nur eine Übersetztung des Originals von [I-Rinka](https://github.com/I-Rinka)
 
 Ich bin nicht für die Funktion zuständig nur für die Übersetzung aller Kommentare ins Deutsche
+
 Übersetzung des Originals:
 
 ## Win Keyboard Locker
